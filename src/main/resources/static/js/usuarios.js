@@ -11,7 +11,7 @@ document.getElementById("formUsuario").addEventListener("submit", async function
     };
 
     try {
-        const response = await fetch("http://localhost:8081/usuario", {
+        const response = await fetch("http://localhost:8080/usuario", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuario)
