@@ -6,14 +6,12 @@ import com.javapablophelipe.cadastro_usuario.infrastructure.entitys.Compra;
 import com.javapablophelipe.cadastro_usuario.infrastructure.repository.CompraRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/compras")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:8080")
 public class CompraController {
 
     private final CompraRepository compraRepository;
