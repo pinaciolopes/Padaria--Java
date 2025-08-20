@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/comp.css">
+</head>
+<body>
+   <!-- CARRINHO -->
+<!-- <div id="carrinho" style="display: block;">
+    <h1>Meu Carrinho</h1>
+    <ul id="listaCarrinho"></ul>
+    <div class="total">
+        Total: <span id="totalCarrinho">R$ 0,00</span>
+    </div>
+    <div class="botoes-carrinho">
+        <button id="btnVoltarProdutos" class="btn">← Voltar para Produtos</button>
+        <button id="irCheckout" class="btn btn-finalizar">Finalizar Compra</button>
+    </div>
+</div> -->
+
+<!-- CHECKOUT -->
+<div id="checkout" style="display: block;">
+    <h1>Finalizar Compra</h1>
+    <div class="grid">
+        <!-- Formulário -->
+        <section class="card">
+            <h2>Dados para Entrega</h2>
+            <form id="checkoutForm">
+                <label>Nome completo
+                    <input type="text" id="nome" required>
+                </label>
+                <label>CPF
+                    <input type="text" id="cpf" required>
+                </label>
+                <label>Endereço
+                    <input type="text" id="endereco" required>
+                </label>
+                <label>Cidade
+                    <input type="text" id="cidade" required>
+                </label>
+                <label>UF
+                    <select id="uf" required>
+                        <option value="">Selecione</option>
+                        <option>SP</option><option>RJ</option><option>MG</option>
+                        <option>RS</option><option>SC</option><option>PR</option>
+                    </select>
+                </label>
+
+                <h3>Pagamento</h3>
+                <label><input type="radio" name="pagamento" value="cartao" checked> Cartão</label>
+                <label><input type="radio" name="pagamento" value="pix"> Pix</label>
+                <label><input type="radio" name="pagamento" value="boleto"> Boleto</label>
+
+                <div class="botoes">
+                    <button type="button" id="btnVoltar" class="btn">← Voltar para Carrinho</button>
+                    <button type="submit" class="btn btn-finalizar">Finalizar Compra</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Resumo do Pedido -->
+        <aside class="card">
+            <h2>Resumo</h2>
+            <ul id="resumo"></ul>
+            <div class="total">
+                Total: <span id="total">R$ 0,00</span>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<script>
+    // Itens do carrinho
+    const itensCarrinho = [
+        { nome: 'Pão Francês', preco: 1.50, qtd: 6 },
+        { nome: 'Sonho', preco: 6.90, qtd: 2 }
+    ];
+
+    function renderCarrinho() {
+        const lista = document.getElementById('listaCarrinho');
+        const totalSpan = document.getElementById('totalCarrinho');
+        lista.innerHTML = '';
+        let total = 0;
+
+        itensCarrinho.forEach(item => {
+            const li = document.createElement('li');
+            const subtotal = item.preco * item.qtd;
+            li.textContent = `${item.qtd}x ${item.nome} - R$ ${subtotal.toFixed(2)}`;
+            lista.appendChild(li);
+            total += subtotal;
+        });
+
+        totalSpan.textContent = `R$ ${total.toFixed(2)}`;
+    }
+
+    function renderResumo() {
+        const resumo = document.getElementById('resumo');
+        const totalSpan = document.getElementById('total');
+        resumo.innerHTML = '';
+        let total = 0;
+
+        itensCarrinho.forEach(item => {
+            const li = document.createElement('li');
+            const subtotal = item.preco * item.qtd;
+            li.textContent = `${item.qtd}x ${item.nome} - R$ ${subtotal.toFixed(2)}`;
+            resumo.appendChild(li);
+            total += subtotal;
+        });
+
+        totalSpan.textContent = `R$ ${total.toFixed(2)}`;
+    }
+
+    // Trocar de tela
+    document.getElementById('irCheckout').addEventListener('click', () => {
+        document.getElementById('carrinho').style.display = 'none';
+        document.getElementById('checkout').style.display = 'block';
+        renderResumo();
+    });
+
+    document.getElementById('btnVoltar').addEventListener('click', () => {
+        document.getElementById('checkout').style.display = 'none';
+        document.getElementById('carrinho').style.display = 'block';
+        renderCarrinho();
+    });
+
+    document.getElementById('btnVoltarProdutos').addEventListener('click', () => {
+        window.location.href = ""; // Substitua pelo link da página de produtos
+    });
+
+    document.getElementById('checkoutForm').addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Compra finalizada! Obrigado.');
+    });
+
+    // Inicializa o carrinho
+    renderCarrinho();
+</script>
+    
+</body>
+</html>

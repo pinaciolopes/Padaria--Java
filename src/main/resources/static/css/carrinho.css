@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color:#f3daafe1;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .site-header, .site-footer {
+    background-color: #ffffff69;
+    color: rgb(0, 0, 0);
+    padding: 15px 0;
+  }
+  
+  .site-header .brand {
+    font-size: 24px;
+    text-decoration: none;
+    color: rgb(5, 2, 1);
+    font-weight: bold;
+  }
+  
+  .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .hero {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 15px;
+    width: 250px;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  .card-body {
+    margin-top: 10px;
+  }
+  
+  .price {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  .quantidade {
+    margin: 10px 0;
+  }
+  
+  .btn {
+    padding: 8px 15px;
+    margin: 5px 5px 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-finalizar {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn-danger {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .botoes-carrinho {
+    margin-top: 10px;
+  }
+  
+  .carrinho-footer {
+    margin-top: 20px;
+  }
+  
+  .site-footer {
+    text-align: center;
+    padding: 15px 0;
+  }
+  

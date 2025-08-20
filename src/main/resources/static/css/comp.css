@@ -1,0 +1,226 @@
+/* --- RESET BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- BODY --- */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f3daafe1;
+    color: #000000;
+    line-height: 1.6;
+    padding: 20px;
+    text-align: center; /* centraliza títulos e texto padrão */
+}
+
+/* --- TÍTULOS --- */
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/* --- BOTÕES --- */
+.btn {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn-finalizar {
+    background-color: #1fbe44;
+    color: #ffffff;
+}
+
+.btn-finalizar:hover {
+    background-color: #37d65a;
+}
+
+.btn-danger {
+    background-color: #f70f26;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* --- CARTÕES --- */
+.card {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto; /* centraliza cards */
+    background-color: #f3cccc75;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    transition: transform 0.2s;
+    max-width: 500px; /* limita largura para centralização */
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+/* --- GRID --- */
+.grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center; /* centraliza horizontalmente */
+}
+
+/* --- TOTAL --- */
+.total {
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+/* --- LISTAS --- */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    text-align: left; /* mantém os itens da lista alinhados à esquerda */
+    margin: 0 auto;
+}
+
+/* --- FORMULÁRIOS --- */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-align: left; /* mantém o alinhamento dos labels */
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #cccccc63;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: #189134;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* --- BOTÕES DE AÇÃO --- */
+.botoes, .botoes-carrinho {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center; /* centraliza botões */
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* --- SEÇÃO DE CARRINHO --- */
+#carrinho, #checkout {
+    background-color: #f1d29be1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin: 20px auto; /* centraliza as seções */
+    max-width: 900px; /* limita largura para centralização */
+}
+
+/* --- RESUMO DO PEDIDO --- */
+aside.card ul {
+    margin-top: 10px;
+}
+
+aside.card ul li {
+    margin-bottom: 8px;
+}
+
+/* --- PRODUTOS DO CHECKOUT --- */
+.products-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* centraliza produtos */
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card-body .price {
+    display: block;
+    margin: 5px 0;
+}
+
+.quantidade {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centraliza quantidade */
+}
+
+.quantidade span {
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+/* --- RODAPÉ --- */
+.site-footer {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    background-color: #28a745;
+    color: white;
+    border-radius: 8px;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+    }
+
+    .product-card, aside.card, section.card {
+        width: 100%;
+    }
+
+    .botoes, .botoes-carrinho {
+        flex-direction: column;
+    }
+}
