@@ -1,14 +1,53 @@
-/* Container do formulário */
+
+/* Faz a imagem cobrir toda a página */
 body {
-  background: url("../img/doce&sabor.png") no-repeat center center fixed;
-  background-size: contain; /* Mantém proporção da logo */
-  background-color: white#fff8f0; /* Cor de fundo de apoio atrás da logo */
-  
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh; /* Garante que ocupe a tela toda */
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('../img/pao&sabor.png'); /* caminho da sua imagem */
+    background-size: cover; /* cobre toda a tela */
+    background-position: center; /* centraliza a imagem */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
 }
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.85); /* branco semi-transparente */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    width: 350px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Inputs e botão */
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #f28b20;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e07a17;
+}
+
 
 
 
