@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/usuario")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:63342")
+@CrossOrigin(origins = "https://padaria-java.onrender.com")
 
 public class UsuarioController {
 
@@ -18,7 +18,7 @@ public class UsuarioController {
     @PostMapping
     public ResponseEntity <Void> salvarUsuario(@RequestBody Usuario usuario) {
             usuarioService.salvarUsuario(usuario);
-            return ResponseEntity.ok().build();
+            return ResponseEntity.status(201).build();
     }
 
     @GetMapping

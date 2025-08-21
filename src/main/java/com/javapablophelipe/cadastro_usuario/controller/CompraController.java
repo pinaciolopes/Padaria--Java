@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/compras")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:63342")
+@CrossOrigin(origins = "https://padaria-java.onrender.com")
 public class CompraController {
 
     private final CompraRepository compraRepository;
@@ -20,6 +20,6 @@ public class CompraController {
     @PostMapping
     public ResponseEntity<Compra>criarCompra(@RequestBody CompraRequestDTO dto){
         Compra novaCompra = compraService.criarCompraComDTO(dto);
-        return ResponseEntity.ok(novaCompra);
+        return ResponseEntity.status(201).body(novaCompra);
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/padaria")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:63342")
+@CrossOrigin(origins = "https://padaria-java.onrender.com")
 
 public class PadariaController {
 
@@ -18,7 +18,7 @@ public class PadariaController {
     @PostMapping
     public ResponseEntity <Void> cadastrarProduto (@RequestBody Padaria padaria) {
         padariaService.cadastrarProduto(padaria);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.status(201).build();
     }
     @GetMapping
     public ResponseEntity<Padaria> buscarProdutoPorId (@RequestParam Long id) {
