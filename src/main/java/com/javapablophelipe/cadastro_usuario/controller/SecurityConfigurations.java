@@ -1,4 +1,4 @@
-package com.javapablophelipe.cadastro_usuario.controller;
+package com.javapablophelipe.cadastro_usuario.config;
 
 import com.javapablophelipe.cadastro_usuario.infrastructure.repository.UserRepository;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfigurations {
 
-    private UserRepository repository;
+    private final UserRepository repository;
 
     public SecurityConfigurations(UserRepository repository) {
         this.repository = repository;
@@ -32,12 +32,27 @@ public class SecurityConfigurations {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                // Desabilita CSRF para testes e H2
                 .csrf(csrf -> csrf.disable())
+
+                // Permitir acesso a endpoints públicos
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/usuario/**").permitAll()
+                        .requestMatchers("/h2-console/**").permitAll()
                         .anyRequest().authenticated()
-                );
+                )
+
+                // Habilita frames do H2 console
+                .headers(headers -> headers.frameOptions(frame -> frame.sameOrigin()))
+
+                // Configura login padrão
+                .formLogin()
+                .permitAll()
+                .and()
+                .logout()
+                .permitAll();
+
         return http.build();
     }
 }
