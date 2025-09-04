@@ -34,7 +34,7 @@ async function buscarUsuario() {
     const cpf = document.getElementById("buscarCpf").value;
 
     try {
-        const response = await fetch(`http://localhost:8080/usuario?cpf=${cpf}`);
+        const response = await fetch(`http://localhost:8081/usuario?cpf=${cpf}`);
 
         if (response.ok) {
             const usuario = await response.json();
@@ -60,7 +60,7 @@ async function atualizarUsuario() {
     };
 
     try {
-        const response = await fetch(`http://localhost:8080/usuario/${cpf}`, {
+        const response = await fetch(`http://localhost:8081/usuario/${cpf}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(usuarioAtualizado)
@@ -82,7 +82,7 @@ async function deletarUsuario() {
     const cpf = document.getElementById("cpfDeletar").value;
 
     try {
-        const response = await fetch(`http://localhost:8080/usuario/${cpf}`, {
+        const response = await fetch(`http://localhost:8081/usuario/${cpf}`, {
             method: "DELETE"
         });
 
@@ -100,7 +100,7 @@ async function deletarUsuario() {
 // LISTAR TODOS OS USUÁRIOS
 async function listarUsuarios() {
     try {
-        const response = await fetch("http://localhost:8080/usuarios");
+        const response = await fetch("http://localhost:8081/usuarios");
 
         if (response.ok) {
             const usuarios = await response.json();

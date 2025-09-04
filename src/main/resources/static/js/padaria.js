@@ -1,4 +1,4 @@
-const BASE_URL = "https://padaria-java.onrender.com/padaria";
+const BASE_URL = "http://localhost:8080/api/padaria";
 
 // Cadastrar novo produto
 async function cadastrarProduto(produto) {

@@ -1,0 +1,103 @@
+/* ---------- Estilo global ---------- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f3daafe1; /* tom parecido com a outra aba */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ---------- Container de formulário ---------- */
+.login-container {
+    width: 350px;
+    padding: 30px;
+    background: #f3cccc75;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    text-align: center;
+}
+
+/* ---------- Títulos ---------- */
+.login-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #000000;
+}
+
+/* ---------- Labels ---------- */
+.login-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* ---------- Inputs ---------- */
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc63;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.login-container input:focus {
+    border-color: #189134;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+/* ---------- Botões ---------- */
+.btn {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-login {
+    background-color: #1fbe44;
+    color: #fff;
+}
+
+.btn-login:hover {
+    background-color: #37d65a;
+}
+
+.btn-cadastro {
+    background-color: #f70f26;
+    color: #fff;
+}
+
+.btn-cadastro:hover {
+    background-color: #c82333;
+}
+
+/* ---------- Link externo para botão ---------- */
+.login-container a {
+    text-decoration: none;
+    display: block;
+}
+
+/* ---------- Parágrafo cadastro / aviso ---------- */
+.login-container p {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: #000;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+        padding: 20px;
+    }
+}
