@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/usuario")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:63342")
+@CrossOrigin(origins = "https://padaria-java.onrender.com/usuario")
 
 public class UsuarioController {
 
