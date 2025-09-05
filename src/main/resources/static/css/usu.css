@@ -1,92 +1,125 @@
-
+/* Fundo com imagem */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f3daafe1; /* tom parecido com a outra aba */
+    height: 100vh;
+    background-image: url('../img/pao&sabor.png'); /* caminho da imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-}
-
-
-.login-container {
-    width: 320px;
-    padding: 25px;
-    background: #ff0d0d75;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Container do login */
+  .login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: #f3daafe1; /* leve transparência */
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
     text-align: center;
-}
-
-.login-container h2 {
+  }
+  
+  /* Título */
+  .login-container h2 {
     margin-bottom: 20px;
     font-size: 1.8em;
     color: #000000;
-}
-
-
-.login-container label {
+  }
+  
+  /* Labels */
+  .login-container label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: bold;
+    color: #000000;
     text-align: left;
-}
-
-.login-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #cccccc63;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-.login-container input:focus {
-    border-color: #189134;
-    outline: none;
-    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
-}
-
-
-.login-container button {
+    font-size: 16px;
+  }
+  
+  /* Inputs e Select */
+  .login-container input,
+  .login-container select {
     width: 100%;
     padding: 12px;
-    margin: 8px 0;
-    cursor: pointer;
+    margin-bottom: 20px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Foco nos inputs */
+  .login-container input:focus,
+  .login-container select:focus {
+    border-color: #09ec11;
+    outline: none;
+    box-shadow: 0 0 8px rgba(8, 209, 15, 0.6);
+  }
+  
+  /* Botão principal (Entrar) */
+  .login-container button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: #a31717;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
+    font-size: 18px;
     font-weight: bold;
-    transition: 0.3s;
-}
-
-.login-container button[type="submit"] {
-    background-color: #1fbe44;
     color: #fff;
-}
-
-.login-container button[type="submit"]:hover {
-    background-color: #37d65a;
-}
-
-.login-container button[type="button"] {
-    background-color: #f70f26;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover no botão */
+  .login-container button[type="submit"]:hover {
+    background-color: #9c0c0c;
+    transform: translateY(-2px);
+  }
+  
+  /* Botão de cadastro (secundário) */
+  .login-container button[type="button"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #f28b20;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
     color: #fff;
-}
-
-.login-container button[type="button"]:hover {
-    background-color: #c82333;
-}
-
-.login-container a {
-    text-decoration: none;
-    display: block;
-}
-
-
-.login-container p {
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover no botão de cadastro */
+  .login-container button[type="button"]:hover {
+    background-color: hsl(30, 81%, 48%);
+    transform: translateY(-2px);
+  }
+  
+  /* Texto abaixo */
+  .login-container p {
     margin-top: 15px;
     font-size: 0.95em;
     color: #000;
-}
+  }
+  
+  /* Responsividade */
+  @media (max-width: 480px) {
+    .login-container {
+      padding: 20px;
+      max-width: 90%;
+    }
+    .login-container input,
+    .login-container button {
+      font-size: 14px;
+    }
+  }
+  
