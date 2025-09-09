@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Cadastro</title>
+    <link rel="stylesheet" href="../static/css/usu.css">
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Atualizar Cadastro</h2>
+
+    <!-- Formulário de atualização -->
+    <form action="atualizar.html" method="post">
+        <label for="usuario">Usuário:</label>
+        <input type="text" id="usuario" name="usuario" value="usuarioAtual" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="email@exemplo.com" required>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" value="senhaAtual" required>
+
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" value="2000-01-01" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" value="11999999999" required pattern="[0-9]{10,11}" title="Digite um número válido">
+
+        <button type="submit" class="btn btn-login">Atualizar</button>
+    </form>
+
+    <!-- Botão de exclusão -->
+    <form action="excluir.html" method="post" onsubmit="return confirm('Tem certeza que deseja excluir sua conta?');">
+        <button type="submit" class="btn btn-cadastro">Excluir Usuário</button>
+    </form>
+</div>
+
+</body>
+</html>

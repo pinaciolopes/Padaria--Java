@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../static/css/usu.css">
+</head>
+<body>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css"> <!-- seu CSS já existente -->
+</head>
+<body>
+
+<div class="login-container">
+  <h2>Login</h2>
+
+  <!-- Aponta para a URL configurada no Spring Security -->
+  <form action="/auth/login" method="post">
+
+    <label for="usuario">Usuário:</label>
+    <!-- name precisa ser "username" -->
+    <input type="text" id="usuario" name="username" required>
+
+    <label for="senha">Senha:</label>
+    <!-- name precisa ser "password" -->
+    <input type="password" id="senha" name="password" required>
+
+    <!-- Seleção de tipo de usuário -->
+    <label for="tipo">Entrar como:</label>
+    <select id="tipo" name="tipo" required>
+      <option value="user">Usuário</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <button type="submit">Entrar</button>
+  </form>
+
+  <p>Não tem conta?
+    <a href="index.html">
+      <button type="button">Cadastre-se</button>
+    </a>
+  </p>
+</div>
+
+</body>
+</html>

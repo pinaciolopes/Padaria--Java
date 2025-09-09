@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carrinho - Padaria Jalhin Rabhei</title>
+  <link rel="stylesheet" href="/static/css/..carrinho.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="produtos.html" class="brand">Padaria Doce & Sabor</a>
+      <nav class="nav">
+        <ul>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="container">
+    <section class="hero">
+      <h1>🛒 Seu Carrinho</h1>
+      <p>Confira os itens selecionados e finalize sua compra.</p>
+    </section>
+  
+    <section class="product-section">
+      <h2>Itens no Carrinho</h2>
+      <div id="itens" class="products-grid"></div>
+  
+      <div class="carrinho-footer">
+        <h3>Total: R$ <span id="total">0.00</span></h3>
+  
+        <div class="botoes-carrinho">
+          <button onclick="voltarProdutos()" class="btn">← Voltar para Produtos</button>
+          <button onclick="finalizarCompra()" class="btn btn-finalizar">Finalizar Compra
+          </button>
+          <button onclick="limparCarrinho()" class="btn btn-danger" id="limparCarrinhoBtn" style="display:none;">
+            Limpar Carrinho
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="ano"></span> Padaria Doce & Sabor — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+  
+    let itensCarrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  
+    function atualizarCarrinho() {
+      let itensHTML = '';
+      let total = 0;
+  
+      itensCarrinho.forEach((item, index) => {
+        const subtotal = item.preco * item.quantidade;
+        total += subtotal;
+  
+        itensHTML += `
+          <div class="product-card">
+            <img src="${item.img}" alt="${item.nome}">
+            <div class="card-body">
+              <h3 class="product-name">${item.nome}</h3>
+              <span class="price">Preço unitário: R$ ${item.preco.toFixed(2)}</span><br>
+              <span class="price">Subtotal: R$ ${subtotal.toFixed(2)}</span>
+              <div class="quantidade">
+                <button class="btn" onclick="alterarQuantidade(${index}, -1)">-</button>
+                <span>${item.quantidade}</span>
+                <button class="btn" onclick="alterarQuantidade(${index}, 1)">+</button>
+              </div>
+              <button class="btn btn-danger" onclick="removerCarrinho(${index})">Remover</button>
+            </div>
+          </div>
+        `;
+      });
+  
+      document.getElementById('itens').innerHTML = itensHTML;
+      document.getElementById('total').innerText = total.toFixed(2);
+      document.getElementById('limparCarrinhoBtn').style.display = itensCarrinho.length > 0 ? 'inline-block' : 'none';
+    }
+  
+    function alterarQuantidade(index, delta) {
+      itensCarrinho[index].quantidade += delta;
+      if (itensCarrinho[index].quantidade <= 0) {
+        itensCarrinho.splice(index, 1);
+      }
+      salvarCarrinho();
+      atualizarCarrinho();
+    }
+  
+    function removerCarrinho(index) {
+      itensCarrinho.splice(index, 1);
+      salvarCarrinho();
+      atualizarCarrinho();
+    }
+  
+    function limparCarrinho() {
+      itensCarrinho = [];
+      salvarCarrinho();
+      atualizarCarrinho();
+    }
+  
+    function salvarCarrinho() {
+      localStorage.setItem('carrinho', JSON.stringify(itensCarrinho));
+    }
+  
+    function voltarProdutos() {
+      window.location.href = "produtos.html";
+    }
+  
+    function finalizarCompra() {
+  if(itensCarrinho.length === 0) {
+    alert("Seu carrinho está vazio!");
+    return;
+  }
+  alert("Compra finalizada! Obrigado por comprar na Padaria.");
+  limparCarrinho(); // opcional: esvazia o carrinho após finalizar
+  window.location.href = "compra.html"; // aqui faz o redirecionamento
+}
+  
+    atualizarCarrinho();
+  </script>
+
+</body>
+</html>

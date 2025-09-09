@@ -1,0 +1,134 @@
+
+/* Faz a imagem cobrir toda a página */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('../img/pao&sabor.png'); /* caminho da sua imagem */
+    background-size: cover; /* cobre toda a tela */
+    background-position: center; /* centraliza a imagem */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.85); /* branco semi-transparente */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    width: 350px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Inputs e botão */
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #f28b20;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: hsl(30, 81%, 48%);
+}
+
+
+
+
+/* Container do formulário */
+.form-container {
+  width: 100%;
+  max-width: 400px;  /* Ajusta o tamanho máximo da caixa */
+  margin-left: 20px; /* Ajusta a margem à esquerda */
+  margin-top: 40px;  /* Deixa uma margem no topo */
+  padding: 30px;
+  background-color: #f3daafe1; /* Leve transparência para o fundo */
+  border-radius: 15px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px); /* Adiciona um desfoque ao fundo */
+}
+
+/* Labels */
+.form-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+}
+
+/* Inputs */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="tel"],
+.form-container input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Efeito ao focar no input */
+.form-container input:focus {
+  border-color: #09ec11;
+  outline: none;
+  box-shadow: 0 0 8px rgba(8, 209, 15, 0.6);
+}
+
+/* Botão */
+.form-container button {
+  width: 100%;
+  padding: 14px;
+  background-color: #a31717;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Botão hover */
+.form-container button:hover {
+  background-color: #9c0c0c;
+  transform: translateY(-2px); /* Sutil animação para dar feedback visual */
+}
+
+/* Botão foco */
+.form-container button:focus {
+  outline: none;
+  box-shadow: 0 0 5px #08d10f;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 20px;
+    max-width: 90%;
+    margin-left: 10px; /* Ajuste da margem em dispositivos pequenos */
+  }
+  .form-container input,
+  .form-container button {
+    font-size: 14px;
+  }
+}
