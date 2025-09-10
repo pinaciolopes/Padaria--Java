@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="../static/css/usu.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="produtos.html" method="get">
+      
+      <label for="usuario">Usuário:</label>
+      <input type="text" id="usuario" name="usuario" required>
+
+      <label for="senha">Senha:</label>
+      <input type="password" id="senha" name="senha" required>
+
+      <!-- Nova aba de seleção -->
+      <label for="tipo">Entrar como:</label>
+      <select id="tipo" name="tipo" required>
+        <option value="user">Usuário</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <button type="submit">Entrar</button>
+    </form>
+
+    <p>Não tem conta? 
+      <a href="index.html">
+        <button type="button">Cadastre-se</button>
+      </a>
+    </p>
+  </div>
+
+</body>
+</html>

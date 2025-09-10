@@ -1,0 +1,235 @@
+<!-- == index.html == -->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Padaria - Produtos</title>
+  <link rel="stylesheet" href="../static/css/pod.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="brand">Padaria Doce & Sabor</a>
+      <nav class="nav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#Produtos">Produtos</a></li>
+          <li><a href="#Sobre">Sobre</a></li>
+          <li><a href="#Contato">Contato</a></li>
+          <li><a href="atualizar.html">Atualizar Usuário</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Produtos fresquinhos todos os dias</h1>
+      <p>Confira nossas opções de pães, doces, salgados e bebidas. Feito com carinho e ingredientes selecionados.</p>
+      <div class="controls">
+        <label for="buscar" class="sr-only">Buscar produtos</label>
+        <input id="buscar" type="search" placeholder="Buscar produto (ex: pão francês)" aria-label="Buscar produtos">
+
+        <label for="filtro" class="sr-only">Filtrar por categoria</label>
+        <select id="filtro" aria-label="Filtrar por categoria">
+          <option value="all">Todas as categorias</option> 
+          <option value="paes">Pães</option>
+          <option value="doces">Doces</option>
+          <option value="salgados">Salgados</option>
+          <option value="bebidas">Bebidas</option>
+        </select>
+      </div>
+    </section>
+
+    <section id="produtos" class="product-section" aria-labelledby="produtos-titulo">
+      <h2 id="produtos-titulo">Nossos produtos</h2>
+
+      <ul class="products-grid" role="list">
+
+        <li class="product-card" data-category="Pães">
+          <img src="../static/img/Pão.jpg" alt="Pão francês crocante">
+          <div class="card-body">
+            <h3 class="product-name"> Pão francês</h3>
+            <p class="product-desc"></p>
+            <div class="card-meta">
+              <span class="price">R$ 6,00</span>
+              <a href="carrinho.html"><button class="btn btn-primary" aria-label="Adicionar Pão Francês ao carrinho">Adicionar</button>
+            </a>
+              
+            </div>
+          </div>
+        </li>
+
+        <li class="product-card" data-category="doces">
+          <img src="../static/img/brigadeiro.jpg" alt="Brigadeiro">
+          <div class="card-body">
+            <h3 class="product-name">Brigadeiro</h3>
+            <p class="product-desc">Tradicional docinho brasileiro — embalagem com 6 unidades.</p>
+            <div class="card-meta">
+              <span class="price">R$ 16,00</span>
+             <a href="carrinho.html">
+              <button class="btn btn-primary" aria-label="Adicionar Brigadeiro ao carrinho">Adicionar</button>
+             </a> 
+            </div>
+          </div>
+        </li>
+
+        <li class="product-card" data-category="salgados">
+          <img src="../static/img/Caxinha.jpg" alt="Coxinha recheada">
+          <div class="card-body">
+            <h3 class="product-name">Coxinha</h3>
+            <p class="product-desc">    </p>
+            <div class="card-meta">
+              <span class="price">R$ 5,50</span>
+              <button class="btn btn-primary" aria-label="Adicionar Coxinha ao carrinho">Adicionar</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="product-card" data-category="bebidas">
+          <img src="../static/img/Cafe3.jpg" alt="Café espresso">
+          <div class="card-body">
+            <h3 class="product-name">Café Espresso</h3>
+            <p class="product-desc">Dose de café espresso, feito na hora.</p>
+            <div class="card-meta">
+              <span class="price">R$ 3,50</span>
+              <button class="btn btn-primary" aria-label="Adicionar Café Espresso ao carrinho">Adicionar</button>
+            </div>
+          </div>
+        </li>
+
+        <li class="product-card" data-category="salgados">
+            <img src="../static/img/misto.jpg" alt="Café espresso">
+            <div class="card-body">
+              <h3 class="product-name">Misto quente completo</h3>
+              <p class="product-desc">Misto quente completo</p>
+              <div class="card-meta">
+                <span class="price">R$ 14,99</span>
+                <button class="btn btn-primary" aria-label="Adicionar Café Espresso ao carrinho">Adicionar</button>
+              </div>
+            </div>
+          </li>
+
+          <li class="product-card" data-category="doces">
+            <img src="../static/img/Sonho.jpg" alt="Café espresso">
+            <div class="card-body">
+              <h3 class="product-name">Sonho </h3>
+              <p class="product-desc"></p>
+              <div class="card-meta">
+                <span class="price">R$ 27,89</span>
+                <button class="btn btn-primary" aria-label="Adicionar Café Espresso ao carrinho">Adicionar</button>
+              </div>
+            </div>
+          </li> 
+
+          <li class="product-card" data-category="doces">
+            <img src="../static/img/Bolo de caramelo.jpg" alt="Café espresso">
+            <div class="card-body">
+              <h3 class="product-name">Bolo de caramelo</h3>
+              <p class="product-desc"></p>
+              <div class="card-meta">
+                <span class="price">R$ 50,99</span>
+                <button class="btn btn-primary" aria-label="Adicionar Café Espresso ao carrinho">Adicionar</button>
+              </div>
+            </div>
+          </li> 
+
+          <li class="product-card" data-category="doces">
+            <img src="../static/img/Bolo de cenoura.jpg" alt="Café espresso">
+            <div class="card-body">
+              <h3 class="product-name">Bolo de cenoura</h3>
+              <p class="product-desc"></p>
+              <div class="card-meta">
+                <span class="price">R$ 35,99</span>
+                <button class="btn btn-primary" aria-label="Adicionar Café Espresso ao carrinho">Adicionar</button>
+              </div>
+            </div>
+          </li> 
+
+
+
+ 
+      </ul>
+    </section>
+
+    <section id="sobre" class="about">
+      <h2>Sobre a padaria</h2>
+      <p>Na <Strong> Doce & Sabor</Strong>, você encontra muito mais do que pães fresquinhos e doces irresistíveis: aqui 
+        cada receita é preparada com dedicação, qualidade e aquele toque especial de aconchego. Seja 
+        para começar o dia com energia, aproveitar um café da tarde ou se deliciar com nossos bolos e 
+        quitutes, nós temos sempre uma opção feita para conquistar o seu paladar.
+        Porque na Doce & Sabor, cada detalhe é pensado para transformar simples momentos em experiências deliciosas! 🥐☕🍰 </p>
+    </section>
+
+    <section id="contato" class="contact">
+      <h2>Contato</h2>
+      <p>Email: pao&doceltda@gmail.com | Telefone: (77) 1288-9577</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="ano"></span> Padaria Doce & Sabor — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+
+  const produtos = Array.from(document.querySelectorAll('.product-card'));
+  const buscar = document.getElementById('buscar');
+  const filtro = document.getElementById('filtro');
+
+  function filtrar() {
+    const q = buscar.value.trim().toLowerCase();
+    const categoria = filtro.value;
+
+    produtos.forEach(card => {
+      const nome = card.querySelector('.product-name').textContent.toLowerCase();
+      const desc = card.querySelector('.product-desc').textContent.toLowerCase();
+      const cat = card.dataset.category;
+
+      const matchesQuery = q === '' || nome.includes(q) || desc.includes(q);
+      const matchesCategory = categoria === 'all' || cat === categoria;
+
+      card.style.display = (matchesQuery && matchesCategory) ? '' : 'none';
+    });
+  }
+
+  buscar.addEventListener('input', filtrar);
+  filtro.addEventListener('change', filtrar);
+
+  // Função para adicionar ao carrinho com controle de quantidade
+  function adicionarCarrinho(nome, preco, img) {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+    // Verifica se o produto já está no carrinho
+    const indexExistente = carrinho.findIndex(item => item.nome === nome);
+
+    if (indexExistente >= 0) {
+      carrinho[indexExistente].quantidade += 1;
+    } else {
+      carrinho.push({ nome, preco, img, quantidade: 1 });
+    }
+
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+    // Redireciona para o carrinho
+    window.location.href = "carrinho.html";
+  }
+
+  // Adiciona evento aos botões de "Adicionar"
+  document.querySelectorAll('.product-card').forEach(card => {
+    const btn = card.querySelector('button');
+    btn.addEventListener('click', () => {
+      const nome = card.querySelector('.product-name').textContent;
+      const precoText = card.querySelector('.price').textContent.replace('R$ ', '').replace(',', '.');
+      const preco = parseFloat(precoText);
+      const img = card.querySelector('img').getAttribute('src');
+      adicionarCarrinho(nome, preco, img);
+    });
+  });
+</script>
+
+</body>
+</html>
